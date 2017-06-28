@@ -1,7 +1,7 @@
 {
-  "name": "arcanist",
-  "version": "0.0.1",
-  "description": "phabricator arcanist in nodejs",
+  "name": "arcanist-cli",
+  "version": "1.1.0",
+  "description": "Phabricator arcanist installer in Node.js",
   "main": "index.js",
   "bin": {
     "arc": "index.js"
@@ -13,15 +13,12 @@
     "install.js"
   ],
   "scripts": {
-    "update": "cd arcanist && git pull && cd ../libphutil && git pull && cd ..",
-    "pack": "tar -zcf arcanist-`date '+%Y-%m-%d'`.tar.gz arcanist/ && tar -zcf libphutil-`date '+%Y-%m-%d'`.tar.gz libphutil/",
-    "upload": "deploy-asset *.tar.gz --destDir arc -u cdn -d && date '+%Y-%m-%d' > latest",
-    "build": "rm -rf *.tar.gz && npm run update && npm run pack && npm run upload && rm -rf *.tar.gz",
+    "build": "rm -rf *.tar.gz",
     "install": "node install.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hujiang-FE/arcanist.git"
+    "url": "git+https://github.com/hfcorriez/arcanist-cli"
   },
   "keywords": [
     "arcanist",
@@ -32,9 +29,9 @@
   "author": "Mora",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Hujiang-FE/arcanist/issues"
+    "url": "https://github.com/hfcorriez/arcanist-cli"
   },
-  "homepage": "https://github.com/Hujiang-FE/arcanist#readme",
+  "homepage": "https://github.com/hfcorriez/arcanist-cli#readme",
   "dependencies": {
     "cross-spawn": "^2.0.0",
     "download": "^4.4.1"
